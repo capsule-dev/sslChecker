@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> SSL Checker </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1 minimal-ui">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+
+        <form id="form1" name="form1" method="post" action="/check" class="textcenter">
+            <div class="boxpass">
+                <div class="form-group">
+                    <h4>Domain</h4>
+                    <input class="form-control form-control" type="text" id="domain" name="domain"
+                        placeholder="domain.com" required>
+                </div>
+                <button type="submit" class="btnsub">submit</button>
+            </div>
+        </form>
+
+        <div class="row">
+            <div id="response" class="col-md-12">
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#form1").on("submit",function (e) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: $("#form1").attr("action"),
+                    type: "post",
+                    data: $("#form1").serializeArray(),
+                    success: function(res){
+                        $("#response").html(JSON.stringify(res));
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
