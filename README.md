@@ -10,8 +10,8 @@ SSL Checker sample form using Nodejs-Expressjs
 - Clone this Respo via Git
 
 ```bash
-git clone https://github.com/devbizo/sslchecker-nodejs-sample.git
-cd sslchecker-nodejs-sample
+git clone https://github.com/capsule-dev/sslChecker.git
+cd sslChecker
 npm install
 ```
 
