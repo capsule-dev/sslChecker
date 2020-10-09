@@ -20,7 +20,7 @@ app.post('/check', async (req, res) => {
         'method': 'POST',
         'url': 'https://notify-api.line.me/api/notify',
         'headers': {
-          'Authorization': 'Bearer nIw0WnelMMZ2UYpE3uNXvRMN8NRcSdQN4cbVvDJF41W',
+          'Authorization': 'Bearer <token>',
           'Content-Type': 'application/x-www-form-urlencoded'
         },
         form: {
